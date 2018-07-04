@@ -1,0 +1,62 @@
+/* MAP DIV */
+.cst-map-container {
+    padding: 0 !important;
+}
+.cst-trends {
+    font-size: 1.5em;
+    font-family: os-bold;
+}
+.full-box-shadow-p-0 {
+    box-shadow: 0px 0px 30px -10px #b9b7b5;
+    /*height: 100%;*/
+}
+.map-div .full-box-shadow-p-0 button {
+    font-family: os-semibold;
+    color: #38393C;
+}
+.map-div .cst-btn-div:hover {
+    background-color: #eee;
+}
+.map-div .active {
+    border: 1px solid black;
+}
+@media (min-width:1380px) {
+    .map-div .full-box-shadow-p-0 button i {
+        margin-right: 3rem !important;
+        margin-left: 3rem !important;
+    }
+}
+.map-div .map-search-fixed {
+    position: absolute;
+    top: 10px;
+    border: 0;
+}
+@media (min-width:576px) {
+    .map-div .map-search-fixed {
+        top: 4vh;
+    }
+}
+.map-div .form-control {
+    border: 0;
+}
+.map-div .form-control i {
+    color: #B9B7B5;
+}
+
+.form-control input::placeholder {
+    color: #b9b7b5;
+}
+.breakable {
+    word-break: break-word;
+    text-align: justify;
+    white-space: normal;
+}
+a:hover,
+button:hover,
+button:focus {
+    text-decoration: none !important; 
+}
+input:focus,
+button:focus {
+    box-shadow: none !important;
+}

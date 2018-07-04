@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="map.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid map-div">
+        <div class="row">
+            <div class="col-12 col-xl-9 cst-map-container">
+                <!-- map here -->
+                <div class="form-control form-control-lg map-search-fixed shadow col-5 offset-3 p-0">
+                    <!-- search bar over map-->
+                    <div class="input-group">
+                        <input class="form-control my-sm-1 ml-sm-3" type="text" placeholder="Search valuation range for a property" name="term" />
+                        <div class="input-group-append p-1">
+                            <button class="btn btn-link">
+                                <i class="fas fa-search fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-3 ">
+                <div class="container-fluid" id="accordionFilters">
+                    <div class="mt-xl-4 mb-xl-3 mx-xl-2 text-left ">
+                        <span class="cst-trends d-none d-xl-block">Explore Neighbourhood Trends</span>
+                    </div>
+                    <ul class="row list-unstyled mt-2 mx-2">
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchAverage"
+                                    aria-controls="propertySearchAverage" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-chart-bar fa-lg my-3 mx-md-2"></i>
+                                    <span class="breakable">Average $</span>
+                                </button>
+                            </div>
+                            <div class="collapse " id="propertySearchAverage" data-parent="#accordionFilters">
+                                <div class="row mb-3 px-3 small">
+                                    <span class="mr-auto">
+                                        <$1.5M</span>
+                                            <img class="container-fluid" src="images/chart3_cst.png" />
+                                            <span class="ml-auto">>$10.8M</span>
+                                </div>
+                                <div class="row mx-auto">
+                                    <span class="text-center">Average block-level-price of homes in your area</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchHistoricalAndGrowth"
+                                    aria-controls="propertySearchHistoricalAndGrowth" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-chart-line fa-lg my-3 mx-md-2"></i>
+                                    <span class="breakable">Historical & Growth</span>
+                                </button>
+                            </div>
+                            <div class="collapse" id="propertySearchHistoricalAndGrowth" data-parent="#accordionFilters">
+                                Some description
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block  text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchPricePerSqFt"
+                                    aria-controls="propertySearchPricePerSqFt" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-home fa-lg my-3  mx-md-2"></i>
+                                    <span class="breakable">Price/sq.ft.</span>
+                                </button>
+                            </div>
+                            <div class="collapse" id="propertySearchPricePerSqFt" data-parent="#accordionFilters">
+                                Some description
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block  text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchCensus"
+                                    aria-controls="propertySearchCensus" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-home fa-lg my-3 mx-md-2"></i>
+                                    <span class="breakable">Census</span>
+                                </button>
+                            </div>
+                            <div class="collapse" id="propertySearchCensus" data-parent="#accordionFilters">
+                                Some description
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block  text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchCrime"
+                                    aria-controls="propertySearchCrime" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-home fa-lg my-3 mx-md-2"></i>
+                                    <span class="breakable">Crime</span>
+                                </button>
+                            </div>
+                            <div class="collapse" id="propertySearchCrime" data-parent="#accordionFilters">
+                                Some description
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block  text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchPopGrowth"
+                                    aria-controls="propertySearchPopGrowth" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-home fa-lg my-3 mx-md-2"></i>
+                                    <span class="breakable">Population growth</span>
+                                </button>
+                            </div>
+                            <div class="collapse" id="propertySearchPopGrowth" data-parent="#accordionFilters">
+                                Some description
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
+                            <div class="">
+                                <button class="btn btn-link btn-block  text-uppercase text-left" type="button" data-toggle="collapse" data-target="#propertySearchJobGrowth"
+                                    aria-controls="propertySearchJobGrowth" aria-expanded="false" aria-label="Toggle filters">
+                                    <i class="fas fa-home fa-lg my-3 mx-md-2"></i>
+                                    <span class="breakable">Job growth</span>
+                                </button>
+                            </div>
+                            <div class="collapse" id="propertySearchJobGrowth" data-parent="#accordionFilters">
+                                Some description
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+</html>
