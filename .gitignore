@@ -1,5 +1,5 @@
 node_modules
 .tags*
-.idea
+.idea/*
 *.log
 .env
