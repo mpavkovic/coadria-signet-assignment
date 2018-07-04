@@ -2,6 +2,8 @@
 
 In this repo you have **design.png** file that shows the functionality needed for this assignment. Also there are two other files to help you get started **mapPage.html** and **mapPage.css**. You should build a map page that looks similarly as the page on **design.png**.
 
+![design](./design.png)
+
  Focus for this assignment is exclusively on functionality, clean and reusable code in React and Redux.
  
 If you have your own boilerplate feel free to use it otherwise you can use create react app or any other boilerplate.
