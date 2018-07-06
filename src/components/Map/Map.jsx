@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Map as LeafletMap, Marker, Popup, TileLayer } from 'react-leaflet';
+import { connect } from 'react-redux';
 
+/* eslint-disable react/prefer-stateless-function */
 class Map extends React.Component {
   render() {
     const { locations } = this.props;
@@ -37,4 +39,8 @@ Map.propTypes = {
   })),
 };
 
-export default Map;
+const mapStateToProps = state => ({
+  locations: state.locations,
+});
+
+export default connect(mapStateToProps)(Map);
