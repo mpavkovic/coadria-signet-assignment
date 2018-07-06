@@ -64,3 +64,44 @@ button:focus {
 .cst-btn-filter-active {
   background-color: #f8fca4;
 }
+
+.map-popup-location {
+  .map-popup-location-image {
+    max-width: 100%;
+  }
+
+  .leaflet-popup-content-wrapper {
+    .leaflet-popup-content {
+      margin: 0;
+    }
+  }
+
+  .map-popup-location-wrapper {
+    padding: 10px;
+  }
+
+  .map-popup-location-type {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  .map-popup-location-address {
+    margin-bottom: 7px;
+
+    .map-popup-location-address-street {
+      font-weight: bold;
+    }
+
+    .map-popup-location-address-city {
+      color: #b9b7b5;
+    }
+  }
+
+  .map-popup-location-label {
+    text-transform: uppercase;
+    color: #b9b7b5;
+    font-weight: bold;
+    padding-right: 5px;
+  }
+}
