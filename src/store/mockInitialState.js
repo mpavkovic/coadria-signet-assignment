@@ -81,15 +81,17 @@ export default {
         id: 'avg-price',
         name: 'Average $',
         description: 'Average block-level-price of homes in your area',
+        icon: 'chart-bar',
         legend: {
           range: ['<$1.5M', '>$10.8M'],
-          image: 'chart3_cst.png',
+          image: '/images/chart.png',
         },
       },
       {
         id: 'hist-growth',
         name: 'Historical & Growth',
         description: 'Some description',
+        icon: 'chart-line',
       },
       {
         id: 'price-per-sqft',
@@ -100,11 +102,13 @@ export default {
         id: 'census',
         name: 'Census',
         description: 'Some description',
+        icon: 'home',
       },
       {
         id: 'crime',
         name: 'Crime',
         description: 'Some description',
+        icon: 'wrench',
       },
       {
         id: 'pop-growth',
@@ -115,6 +119,7 @@ export default {
         id: 'job-growth',
         name: 'Job Growth',
         description: 'Some description',
+        icon: 'suitcase',
       },
     ],
   },

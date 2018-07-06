@@ -34,10 +34,33 @@ class Filters extends React.Component {
     const filtersList = filters.length > 0
       ? filters.map(filter => (
         <li key={filter.id} className={cn('col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div', { 'cst-btn-filter-active': activeFilter === filter.id })}>
-          <button type="button" onClick={() => this.handleApplyFilter(filter.id)} className="btn btn-link btn-block text-uppercase text-left">
-            <span className="breakable">
+          <button type="button" onClick={() => this.handleApplyFilter(filter.id)} className="btn btn-link btn-block">
+            <div className="filter-title breakable">
+              {filter.icon && <i className={`filter-icon fa fa-${filter.icon}`} />}
               {filter.name}
-            </span>
+            </div>
+            { (filter.legend || filter.description)
+            && (
+              <div className="filter-details">
+                { filter.legend
+                && (
+                <div className="row mb-3 px-3 small filter-details-legend">
+                  <span className="mr-auto">
+                    {filter.legend.range[0]}
+                  </span>
+                  <img src="http://localhost:8081/images/chart.png" />
+                  <span className="ml-auto">
+                    {filter.legend.range[1]}
+                  </span>
+                </div>
+                )}
+                <div className="filter-details-description">
+                  <span className="text-center">
+                    {filter.description}
+                  </span>
+                </div>
+              </div>
+            )}
           </button>
         </li>
       ))

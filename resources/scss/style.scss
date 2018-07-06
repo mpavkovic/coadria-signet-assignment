@@ -5,14 +5,22 @@
 }
 .cst-trends {
   font-size: 1.5em;
+  font-weight: bold;
 }
 .full-box-shadow-p-0 {
   box-shadow: 0px 0px 30px -10px #b9b7b5;
   /*height: 100%;*/
 }
+
+.cst-btn-div {
+  border-radius: 5px;
+}
+
 .map-div .full-box-shadow-p-0 button {
+  padding: 12px;
   color: #38393C;
 }
+
 .map-div .cst-btn-div:hover {
   background-color: #eee;
 }
@@ -46,11 +54,31 @@
 .form-control input::placeholder {
   color: #b9b7b5;
 }
+
+.filter-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.filter-details {
+  display: none;
+  margin-top: 15px;
+
+  .filter-details-description {
+    width: 75%;
+    white-space: normal;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #666;
+  }
+}
+
 .breakable {
   word-break: break-word;
   text-align: justify;
   white-space: normal;
 }
+
 a:hover,
 button:hover,
 button:focus {
@@ -63,6 +91,10 @@ button:focus {
 
 .cst-btn-filter-active {
   background-color: #f8fca4;
+
+  .filter-details {
+    display: block;
+  }
 }
 
 .map-popup-location {
