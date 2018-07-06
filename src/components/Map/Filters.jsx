@@ -1,23 +1,47 @@
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
 import actionsFilters from '../../actions/filters';
 
-/* eslint-disable react/prefer-stateless-function */
 class Filters extends React.Component {
-  render() {
-    const { applyFilter, filters } = this.props;
+  constructor(props) {
+    super(props);
 
-    const filtersList = filters.length > 0 ? filters.map(filter => (
-      <li key={filter.id} className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div">
-        <button type="button" onClick={() => applyFilter(filter.id)} className="btn btn-link btn-block text-uppercase text-left">
-          <span className="breakable">
-            {filter.name}
-          </span>
-        </button>
-      </li>
-    )) : null;
+    this.handleApplyFilter = this.handleApplyFilter.bind(this);
+  }
+
+  componentWillMount() {
+    const { applyFilter } = this.props;
+
+    const { searchParams } = new URL(document.location);
+    if (searchParams.has('filter')) {
+      applyFilter(searchParams.get('filter'));
+    }
+  }
+
+  handleApplyFilter(filter) {
+    const { applyFilter } = this.props;
+
+    applyFilter(filter);
+    window.history.pushState({ filter }, '', `?filter=${filter}`);
+  }
+
+  render() {
+    const { activeFilter, filters } = this.props;
+
+    const filtersList = filters.length > 0
+      ? filters.map(filter => (
+        <li key={filter.id} className={cn('col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 full-box-shadow-p-0 my-1 my-sm-2 my-xl-3 cst-btn-div', { 'cst-btn-filter-active': activeFilter === filter.id })}>
+          <button type="button" onClick={() => this.handleApplyFilter(filter.id)} className="btn btn-link btn-block text-uppercase text-left">
+            <span className="breakable">
+              {filter.name}
+            </span>
+          </button>
+        </li>
+      ))
+      : null;
 
     return (
       <div className="container-fluid" id="accordionFilters">
@@ -35,11 +59,13 @@ class Filters extends React.Component {
 }
 
 Filters.propTypes = {
+  activeFilter: PropTypes.string.isRequired,
   applyFilter: PropTypes.func.isRequired,
   filters: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const mapStateToProps = state => ({
+  activeFilter: state.filters.active,
   filters: state.filters.filters,
 });
 

@@ -1,4 +1,5 @@
 import mockInitialState from '../mockInitialState';
+
 import { actionTypes } from '../../constants';
 
 export default (state = mockInitialState.filters, action) => {

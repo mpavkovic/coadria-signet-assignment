@@ -5,14 +5,12 @@
 }
 .cst-trends {
   font-size: 1.5em;
-  font-family: os-bold;
 }
 .full-box-shadow-p-0 {
   box-shadow: 0px 0px 30px -10px #b9b7b5;
   /*height: 100%;*/
 }
 .map-div .full-box-shadow-p-0 button {
-  font-family: os-semibold;
   color: #38393C;
 }
 .map-div .cst-btn-div:hover {
@@ -61,4 +59,8 @@ button:focus {
 input:focus,
 button:focus {
   box-shadow: none !important;
+}
+
+.cst-btn-filter-active {
+  background-color: #f8fca4;
 }
